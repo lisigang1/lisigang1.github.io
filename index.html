@@ -128,6 +128,141 @@
     
     
     <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/09/19/AJAX核心处理/">
+        <p class="h4 index-header"></p>
+        <div class="index-excerpt">
+          
+            <div class="index-text mb-1">AJAX核心处理
+ 支持的参数配置项
+
+url
+method:’GET’
+data:null
+dataType:’json’
+async:true
+cache:true
+success:null
+error:null
+headers:null
+timeout:null
+
+
+1234567891011121314/* ==AJAX处理的核心== */let regGET = /^(GET|DELETE|HEAD|OPTIONS)$/i;let defaults = &#123;	url: '', //=&gt;请求的API接口地址	method: 'GET', //=&gt;请求方式 GET/POST/DELETE/PUT/HEAD/OPTIONS	data: null, //=&gt;传递给服务器的信息：支持格式STRING和OBJECT，如果是OBJECT，我们需要把其处理为x-www-form-urlencoded格式；GET请求是把信息作为问号参数传递给服务器，POST请求是放到请求主体中传递给服务器；	dataType: 'JSON', //=&gt;把服务器返回结果处理成为对</div>
+          
+        </div>
+      </a>
+
+        <div>
+          
+            <i class="iconfont icon-riqi2"></i>&nbsp;2019-09-19&nbsp;&nbsp;
+          
+          
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/09/19/服务器和客户端渲染机制/">
+        <p class="h4 index-header">服务器和客户端</p>
+        <div class="index-excerpt">
+          
+            <div class="index-text mb-1">服务器和客户端渲染机制服务器接收到请求后
+
+找到对应的页面，获取到页面的代码
+
+再根据需求从数据库中获取到需要动态展示的数据
+
+把页面和数据混合在一起进行渲染，声称有结构有内容的完整页面
+= &gt; 服务器渲染
+
+把渲染玩的页面返回给客户端
+
+
+
+
+服务器渲染的特点
+
+我们看到的内容都是在服务器端渲染完的(JSP、PHP、ASP、ASP.NET、NODE…)，客户端只是把所有渲染好的内容呈现在页面中而已；然而我们第一次渲染完，页面中的某部分数据需要更新了，我们需要让服务器整体重新的渲染一次，把最新的页面(包含最新的数据)返回给客户端，客户端只能整体刷新页面展示最新的内容 = &gt;”全局刷新”性能和体验等都非常差，而且服务器压力也很大…
+如果服务器性能比较高，页面展现出来的速度会快一些，因为只要从服务器拿到内容，一切信息都已经准备好了
+由于内容在服务器端已经渲染好了，所以页面渲染完成后，在页面的源代码中哪个都可以看到内容，有利于SEO搜索引擎优化
+
+
+客户端渲染数据的内容
+
+可以实现页面中内容的局部刷新，而且渲染的操作交给客户端来做=&gt;体验好、减轻了服务器压力
+而且开始可以只</div>
+          
+        </div>
+      </a>
+
+        <div>
+          
+            <i class="iconfont icon-riqi2"></i>&nbsp;2019-09-19&nbsp;&nbsp;
+          
+          
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/09/19/URL地址经历了什么/">
+        <p class="h4 index-header">URL都经历了什么</p>
+        <div class="index-excerpt">
+          
+            <div class="index-text mb-1">URL地址经历了什么当我们输入URL按下Enter键经历了什么
+URL地址解析
+
+DNS域名解析
+
+和服务器建立TCP链接
+
+把客户端信息传递给服务器(发送HTTP请求)
+
+服务器得到并处理(HTTP响应内容)
+
+客户端渲染服务器返回的内容
+
+和服务断开TCP链接
+### 
+服务器端和客户端
+客户端：可以向服务器发请求，并接收返回的内容进行处理服务器端：能够接收客户端请求，并且把相关资源信息返回给客户端的
+
+URI/URL/URN
+URL（Uniform Resource Locator）：统一资源定位符，根据这个地址能找到对应的资源
+URN（Uniform Resource Name）：统一资源名称，一般指国际上通用的（标准的）一些名字（例如：国际统一发版的编号）
+URI（Uniform Resource Identifier）：统一资源标识符，URL和URN是URI的子集
+
+一个完整的URL所包含的内容
+http://www.zhufengpeixun.cn:80/stu/index.html?from=wx&amp;lx=1#zhenyu
+
+
+协议（http://）：传输协议就是</div>
+          
+        </div>
+      </a>
+
+        <div>
+          
+            <i class="iconfont icon-riqi2"></i>&nbsp;2019-09-19&nbsp;&nbsp;
+          
+          
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
       <a href="/2019/09/18/点击登录按钮经历了什么/">
         <p class="h4 index-header">点击登录按钮中间经历了什么</p>
         <div class="index-excerpt">
@@ -162,11 +297,10 @@
     
     <div class="col-12 col-md-8 m-auto">
       <a href="/2019/09/18/项目一/">
-        <p class="h4 index-header"></p>
+        <p class="h4 index-header">做一个小项目</p>
         <div class="index-excerpt">
           
-            <div class="index-text mb-1">
-title:做一个小项目项目一
+            <div class="index-text mb-1">项目一
 项目结构目录
 
 ​    |- admin 存储我们所有的后台程序
@@ -195,7 +329,9 @@ admin
 - SESSION
 -—————-
 本地存储 VS 服务器存储
-本地存储：把信息存储在客户端本</div>
+本地存储：把信息存储在客户端本地
+
+&gt; 谷歌控制台</div>
           
         </div>
       </a>
