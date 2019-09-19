@@ -128,6 +128,106 @@
     
     
     <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/09/19/存储的作用/">
+        <p class="h4 index-header"></p>
+        <div class="index-excerpt">
+          
+            <div class="index-text mb-1">存储的作用什么时候会用到本地存储？本地存储的作用？
+记住用户名和密码（或者自动登录）
+未登录状态下，加入购物车的信息一般也先存储在本地，当登录后，把信息存储到服务器上（目的是多平台数据共享）
+对于非实时刷新数据，我们可以在从服务器把数据获取到后，临时存储在本地（设置有效时间），在有效时间内页面刷新，不再重新从服务器获取数据，而是读取本地数据；超过有效时间重新从服务器拉取…  “前端性能优化的一点”
+还能实现同一个网站不同页面之间的信息共享和通信
+
+本地存储到底存储在哪了？
+本地存储是受浏览器限制的，例如：在谷歌中存储的数据，在IE中获取不到 
+
+受源(域)的限制，例如：都是用谷歌浏览器，我在京东下存储的数据，在百度中是获取不到的
+
+本地存储的信息在控制台中可以查看到（而且是明文存储），所以敏感的数据尽可能不要存储在本地，非要存储也要做安全处理（例如：加密）
+12345678910111213141516171819- setItem([key],[value]) 存储信息 - getItem([key]) 获取信息- removeItem([key]) 移除某一项信息- clear()</div>
+          
+        </div>
+      </a>
+
+        <div>
+          
+            <i class="iconfont icon-riqi2"></i>&nbsp;2019-09-19&nbsp;&nbsp;
+          
+          
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/09/19/一个倒计时案例/">
+        <p class="h4 index-header"></p>
+        <div class="index-excerpt">
+          
+            <div class="index-text mb-1">一个倒计时案例123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051//new Date()获取客户端本地当前时间（不能拿它做重要依据，因为用户可以随意修改）		/* 		 * 倒计时抢购需要从服务器获取当前时间  AJAX		 *    问题：时间差（从服务器把时间给客户端，到客户端获取到这个信息，中间经历的时间就是时间差，而时间差是不可避免的，我们应尽可能减少这个误差）		 *    - 从响应头获取时间（AJAX异步）		 *    - 基于HEAD请求（只获取响应头信息）		 */		let target = new Date('2019/09/14 13:27:00'),			now = null,			timer = null;		//=&gt;从服务器获取时间：获取到时间后再做其他的事情		function func(callback) &#123;			let xhr = new XMLHttpRequest;			xhr.open('HE</div>
+          
+        </div>
+      </a>
+
+        <div>
+          
+            <i class="iconfont icon-riqi2"></i>&nbsp;2019-09-19&nbsp;&nbsp;
+          
+          
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/09/19/权限校验从用户成功登陆开始/">
+        <p class="h4 index-header"></p>
+        <div class="index-excerpt">
+          
+            <div class="index-text mb-1">权限校验从用户成功登陆开始​    1. 服务器校验
+
+
+客户端做某个操作的时候=&gt;服务器根据登陆者的角色，进行权限校验，返回给客户端是否可以操作 =&gt; 服务器返回给客户端能否操作的标识
+或者不确定哪些内容用户可以看的，都向服务器发请求，由服务器告知我们，那些需要展示
+
+弊端：服务器要处理的请求和对应的压力较大
+优势：安全
+
+
+客户端校验
+
+
+当用户登录成功后，服务器会把该用户拥有的权限，返回给客户端(或者客户端可以基于某个API接口从服务器获取权限)
+
+客户端根据获取的权限校验标识，控制那些显示，那些隐藏，或者进行某些操作的时候进行对应的提示
+
+问题：在某个页面中获取的权限校验码，需要在其它页面使用 =&gt; 我们一般基于本地存储完成的(VUE/REACT中式存储到redux/vuex中的)，如果服务器支持获取权限的接口，也可以每次都从服务器重新获取
+优势：不需要频繁向服务器发送请求，获取校验码后，一切判断客户端来处理，这样减少业务逻辑的复杂度，也减轻了服务器的压力；而且每次验证是否存在权限的速度也快…
+弊端：因为客户端本地校验(有可能还要把信息存储在客户端本地)，容易</div>
+          
+        </div>
+      </a>
+
+        <div>
+          
+            <i class="iconfont icon-riqi2"></i>&nbsp;2019-09-19&nbsp;&nbsp;
+          
+          
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+    <div class="col-12 col-md-8 m-auto">
       <a href="/2019/09/19/AJAX核心处理/">
         <p class="h4 index-header">AJAX的学习</p>
         <div class="index-excerpt">
@@ -398,46 +498,18 @@ admin
     </div>
   </div>
 
-  <div class="row mb-4 mx-auto">
-    
-    
-    <div class="col-12 col-md-8 m-auto">
-      <a href="/2019/09/13/浏览器渲染的重排与重绘以及前端性能优化/">
-        <p class="h4 index-header">浏览器渲染的重排与重绘以及前端性能优化</p>
-        <div class="index-excerpt">
-          
-            <div class="index-text mb-1">More info: Deployment
-细说浏览器渲染的重排与重绘
-前端性能优化因为涉及到计算机网络、数据算法、图形图像处理、浏览器渲染等多方面计算机知识，常作为前端工程师乐此不疲的技术讨论话题，也正因如此，它也是面试时容易被问及的面试题之一。
-
-目录结构
-URL从输入到页面展示的过程
-DOM和JavaScript的关系
-为什么操作DOM会很“慢”
-浏览器解析HTML的过程
-重排
-重绘
-优化方案
-
-URL从输入到页面展示的过程1在探讨浏览器解析html之前，先了解url从输入到最后页面渲染的过程是一个很有必要的步骤，它可以帮助我们把握整体流程，让我们在了解HTML解析细节之前知道它处于整个请求周期中的哪一阶段，这对我们构建完善知识图谱很有帮助。
-
-首先，我们假设输入的url的请求为最简单的Http请求，以GET请求为例，大致分以下几个步骤：
-1. 用户在浏览器的地址栏输入访问的URL地址。浏览器会先根据这个URL查看浏览器缓存-系统缓存-路由器缓存，若缓存中有，直接跳到第6步操作，若没有，则按照下面的步骤进行操作。2. 浏览器根据输入的URL地址解析出主机名。1234&gt;  U</div>
-          
-        </div>
-      </a>
-
-        <div>
-          
-            <i class="iconfont icon-riqi2"></i>&nbsp;2019-09-13&nbsp;&nbsp;
-          
-          
-          
-        </div>
-    </div>
-  </div>
 
 
+  <nav aria-label="index posts navigation">
+    <ul class="pagination pg-blue justify-content-center mt-5">
+      
+      
+        <li class="page-item">
+          <a class="page-link" href="/page/2/#board">Next</a>
+        </li>
+      
+    </ul>
+  </nav>
 
 
               </div>

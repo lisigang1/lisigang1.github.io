@@ -14,7 +14,7 @@
   <meta name="description" content="LSG的博客">
   <meta name="author" content="Faker">
   <meta name="keywords" content="javaScript">
-  <title>服务器和客户端 ~ faker</title>
+  <title>faker</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
@@ -102,7 +102,7 @@
 
             
               <br>
-              <p>Thursday, September 19th 2019, 12:31 pm</p>
+              <p>Thursday, September 19th 2019, 7:51 pm</p>
             
           </div>
 
@@ -123,46 +123,29 @@
       <div class="py-5 z-depth-3" id="board">
         <div class="post-content mx-auto">
           <div class="markdown-body">
-            <h2 id="服务器和客户端渲染机制"><a href="#服务器和客户端渲染机制" class="headerlink" title="服务器和客户端渲染机制"></a>服务器和客户端渲染机制</h2><h4 id="服务器接收到请求后"><a href="#服务器接收到请求后" class="headerlink" title="服务器接收到请求后"></a>服务器接收到请求后</h4><blockquote>
-<ol>
-<li><p>找到对应的页面，获取到页面的代码</p>
-</li>
-<li><p>再根据需求从数据库中获取到需要动态展示的数据</p>
-</li>
-<li><p>把页面和数据混合在一起进行渲染，声称有结构有内容的完整页面</p>
-<p>= &gt; 服务器渲染</p>
-<ol start="4">
-<li>把渲染玩的页面返回给客户端</li>
+            <h3 id="存储的作用"><a href="#存储的作用" class="headerlink" title="存储的作用"></a>存储的作用</h3><h3 id="什么时候会用到本地存储？本地存储的作用？"><a href="#什么时候会用到本地存储？本地存储的作用？" class="headerlink" title="什么时候会用到本地存储？本地存储的作用？"></a>什么时候会用到本地存储？本地存储的作用？</h3><ol>
+<li>记住用户名和密码（或者自动登录）</li>
+<li>未登录状态下，加入购物车的信息一般也先存储在本地，当登录后，把信息存储到服务器上（目的是多平台数据共享）</li>
+<li>对于非实时刷新数据，我们可以在从服务器把数据获取到后，临时存储在本地（设置有效时间），在有效时间内页面刷新，不再重新从服务器获取数据，而是读取本地数据；超过有效时间重新从服务器拉取…  “前端性能优化的一点”</li>
+<li>还能实现同一个网站不同页面之间的信息共享和通信</li>
 </ol>
+<h3 id="本地存储到底存储在哪了？"><a href="#本地存储到底存储在哪了？" class="headerlink" title="本地存储到底存储在哪了？"></a>本地存储到底存储在哪了？</h3><ol>
+<li><p>本地存储是受浏览器限制的，例如：在谷歌中存储的数据，在IE中获取不到 </p>
+</li>
+<li><p>受源(域)的限制，例如：都是用谷歌浏览器，我在京东下存储的数据，在百度中是获取不到的</p>
+</li>
+<li><p>本地存储的信息在控制台中可以查看到（而且是明文存储），所以敏感的数据尽可能不要存储在本地，非要存储也要做安全处理（例如：加密）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">- setItem([key],[value]) 存储信息 </span><br><span class="line">- getItem([key]) 获取信息</span><br><span class="line">- removeItem([key]) 移除某一项信息</span><br><span class="line">- clear() 清除所有存储的信息</span><br><span class="line">=&gt;向本地存储的信息都是STRING字符串格式</span><br><span class="line">=&gt;localStorage是持久化存储在客户端本地的（除非手动清除或者浏览器卸载等，否则一直存储下来，没有过期时间）</span><br><span class="line"> =&gt;sessionStorage会话存储（当前页面刷新，存储信息还在，但是只要页面一关闭，所有会话存储的信息都会消失）</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 设置cookie  =&gt;jquery.cookie.js</span><br><span class="line"></span><br><span class="line"> <span class="built_in">document</span>.cookie=<span class="string">"[key]=[value];..."</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">// $.cookie('username', '珠峰培训');</span></span><br><span class="line"><span class="comment">// console.log($.cookie('username'));</span></span><br><span class="line"><span class="comment">// $.removeCookie('username');</span></span><br><span class="line"> <span class="comment">/* $.cookie('username', 'zhufeng', &#123;</span></span><br><span class="line"><span class="comment">expires: new Date(new Date().getTime() + 30 * 24 * 60 * 60 * 1000)</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">   &#125;);</span></span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
-</blockquote>
-<h3 id="服务器渲染的特点"><a href="#服务器渲染的特点" class="headerlink" title="服务器渲染的特点"></a>服务器渲染的特点</h3><blockquote>
-<ol>
-<li>我们看到的内容都是在服务器端渲染完的(JSP、PHP、ASP、ASP.NET、NODE…)，客户端只是把所有渲染好的内容呈现在页面中而已；然而我们第一次渲染完，页面中的某部分数据需要更新了，我们需要让服务器整体重新的渲染一次，把最新的页面(包含最新的数据)返回给客户端，客户端只能整体刷新页面展示最新的内容 = &gt;”全局刷新”性能和体验等都非常差，而且服务器压力也很大…</li>
-<li>如果服务器性能比较高，页面展现出来的速度会快一些，因为只要从服务器拿到内容，一切信息都已经准备好了</li>
-<li>由于内容在服务器端已经渲染好了，所以页面渲染完成后，在页面的源代码中哪个都可以看到内容，有利于SEO搜索引擎优化</li>
-</ol>
-</blockquote>
-<h3 id="客户端渲染数据的内容"><a href="#客户端渲染数据的内容" class="headerlink" title="客户端渲染数据的内容"></a>客户端渲染数据的内容</h3><blockquote>
-<ol>
-<li>可以实现页面中内容的局部刷新，而且渲染的操作交给客户端来做=&gt;体验好、减轻了服务器压力</li>
-<li>而且开始可以只把部分区域内容的数据获取到，滚到某个区域后，在请求对应的数据也可以，实现数据的分批异步加载，提高性能体验</li>
-<li>由于客户端渲染的内容没有出现在页面的源代码中，不利于SEO优化</li>
-</ol>
-</blockquote>
-<p><img src="C:%5CUsers%5Cpc%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568867487011.png" alt="1568867487011"></p>
-<h3 id="当代项目开发的整个架构模式"><a href="#当代项目开发的整个架构模式" class="headerlink" title="当代项目开发的整个架构模式"></a>当代项目开发的整个架构模式</h3><ol>
-<li>纯服务器渲染(需要做SEO优化或者是技术氛围问题)</li>
-<li>混编模式：部分内容为服务器渲染，部分内容是客户端渲染  =&gt;常见的<ul>
-<li>骨架屏：首屏内容为服务器渲染(目的是让页面一打开，就把首屏内容加载出来，前提服务器得给力)，其余屏内容都是客户端基于AJAX在逐一获取到的，对于表单提交等数据交互操作也是客户端基于AJAX等操作为主(局部刷新)</li>
-</ul>
-</li>
-<li>完全客户端和服务器端分离开发 =&gt; 目前最常见的(推荐的)<ul>
-<li>vue \ react \ jQ</li>
-</ul>
-</li>
-<li>把vue和react在服务器端基于node来渲染 =&gt;服务器渲染</li>
+<h3 id="COOKIE-VS-LOCALSTORAGE"><a href="#COOKIE-VS-LOCALSTORAGE" class="headerlink" title="COOKIE VS LOCALSTORAGE"></a>COOKIE VS LOCALSTORAGE</h3><ol>
+<li>大小限制：一般浏览器允许一个源下COOKIE最多存储8KB，而LOCALSTORAGE被允许存储最大的长度限制是5MB</li>
+<li>2.兼容性：COOKIE兼容所有浏览器，而LOCALSTORAGE是H5中新增的，不兼容IE低版本浏览器（IE6~8）</li>
+<li>稳定性：COOKIE有过期时间，但是一般不等到时间可能就没了（例如：清除浏览器的缓存或者历史信息、安全卫士在清理电脑垃圾等操作时，都有可能会把存储的COOKIE给清除掉），但是这些操作对LOCALSTORAGE没有影响</li>
+<li>有时候浏览器会开启无痕浏览或者隐私模式，此时无法设置COOKIE，但是可以设置LOCALSTORAGE的信息</li>
+<li>和服务器端的猫腻：COOKIE总是会和服务器中的SESSION眉来眼去（客户端和服务器端交互的时候，COOKIE信息会传来传去），而LOCALSTORAGE不屑于和他们同流合污（LOCALSTORAGE和服务器没有必然的联系，是单纯的本地存储）</li>
+<li>存储时间：COOKIE有过期时间，而LOCALSTORAGE是持久存储</li>
 </ol>
 
             <hr>
@@ -272,7 +255,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "服务器和客户端&nbsp;",
+        "&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
