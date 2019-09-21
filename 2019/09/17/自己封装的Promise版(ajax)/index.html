@@ -1,128 +1,68 @@
+
 <!DOCTYPE html>
-<html lang="en">
-
-
-
-
-
+<html lang="en" class="loading">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/img/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="LSG的博客">
-  <meta name="author" content="Faker">
-  <meta name="keywords" content="javaScript">
-  <title>自己封装的promise版ajax ~ faker</title>
-  <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-  <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
-  <link rel="stylesheet" href="/lib/github-markdown/github-markdown.min.css">
-  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1067060_qzomjdt8bmp.css">
-  
-    <link rel="stylesheet" href="/lib/prettify/tomorrow-night-eighties.min.css">
-  
-  <link rel="stylesheet" href="/css/main.css">
-
-  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>自己封装的promise版ajax - faker</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="LSG的博客,自己封装的Promise版(ajax)支持的功能
+1.支持全局默认配置项 _ajax.defaults.xxx=xxx
+2.发送请求_ajax.get/post…
+3.每一次请求都会返回PROMIS,"> 
+    <meta name="author" content="Faker"> 
+    <link rel="alternative" href="atom.xml" title="faker" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
 </head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>faker</strong>&nbsp;</a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-        
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">Archives</a>
-          </li>
-        
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">Categories</a>
-          </li>
-        
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">Tags</a>
-          </li>
-        
-          
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">About</a>
-          </li>
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-
-</nav>
-
-    <div class="view intro-2"
-         style="background: url('/img/default.png')no-repeat center center;
-           background-size: cover;
-           background-attachment: fixed;">
-      <div class="full-bg-img">
-        <div class="mask rgba-black-light flex-center">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
-              
-            </span>
-
-            
-              <br>
-              <p>Tuesday, September 17th 2019, 2:24 pm</p>
-            
-          </div>
-
-          
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">faker</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">自己封装的promise版ajax</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
         </div>
-      </div>
     </div>
-  </header>
+    <div class="scrollbar"></div>
+</div>
 
-  <main>
-    
-      
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">自己封装的promise版ajax</h1>
+        <div class="stuff">
+            <span>九月 17, 2019</span>
+            
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="py-5 z-depth-3" id="board">
-        <div class="post-content mx-auto">
-          <div class="markdown-body">
+        </div>
+        <div class="content markdown">
             <h2 id="自己封装的Promise版-ajax"><a href="#自己封装的Promise版-ajax" class="headerlink" title="自己封装的Promise版(ajax)"></a>自己封装的Promise版(ajax)</h2><h3 id="支持的功能"><a href="#支持的功能" class="headerlink" title="支持的功能"></a>支持的功能</h3><ul>
 <li>1.支持全局默认配置项 _ajax.defaults.xxx=xxx</li>
 <li>2.发送请求_ajax.get/post…</li>
@@ -160,154 +100,102 @@
 *   ......</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">//=&gt;执行axios.xxx()都会返回一个PROMISE实例，AJAX请求成功会把实例的状态改为FULFILLED，请求失败状态改为REJECTED；并且获取的结果或者错误原因作为PROMISE的VALUE</span></span><br><span class="line">	<span class="comment">/* axios.get('http://127.0.0.1:5500/json/data2.json', &#123;</span></span><br><span class="line"><span class="comment">		headers: &#123;</span></span><br><span class="line"><span class="comment">			AAA: encodeURIComponent('珠峰哈哈哈')</span></span><br><span class="line"><span class="comment">		&#125;,</span></span><br><span class="line"><span class="comment">		params: &#123;</span></span><br><span class="line"><span class="comment">			lx: 1,</span></span><br><span class="line"><span class="comment">			from: 'WX'</span></span><br><span class="line"><span class="comment">		&#125;</span></span><br><span class="line"><span class="comment">	&#125;).then(result =&gt; &#123;</span></span><br><span class="line"><span class="comment">		//=&gt;result：从服务器获取的结果</span></span><br><span class="line"><span class="comment">		/!*</span></span><br><span class="line"><span class="comment">		 * CONFIG：我们自己配置的选项信息</span></span><br><span class="line"><span class="comment">		 * DATA：存储的是响应主体内容 </span></span><br><span class="line"><span class="comment">		 * HEADERS：存储响应头的信息</span></span><br><span class="line"><span class="comment">		 * REQUEST：AJAX实例</span></span><br><span class="line"><span class="comment">		 * STATUS：响应状态码</span></span><br><span class="line"><span class="comment">		 * STATUS-TEXT：状态码的描述</span></span><br><span class="line"><span class="comment">		 *!/</span></span><br><span class="line"><span class="comment">		return result.data;</span></span><br><span class="line"><span class="comment">	&#125;).catch(reason =&gt; &#123;</span></span><br><span class="line"><span class="comment">		console.log(reason);</span></span><br><span class="line"><span class="comment">		throw new Error(reason);</span></span><br><span class="line"><span class="comment">	&#125;).then(data =&gt; &#123;</span></span><br><span class="line"><span class="comment">		//=&gt;data：从服务器获取的响应主体内容</span></span><br><span class="line"><span class="comment">		console.log(data);</span></span><br><span class="line"><span class="comment">	&#125;); */</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">	/</span>* axios.post(<span class="string">'http://127.0.0.1:5500/json/data2.json'</span>, &#123;</span><br><span class="line">		lx: <span class="number">1</span>,</span><br><span class="line">		<span class="keyword">from</span>: <span class="string">'WX'</span></span><br><span class="line">	&#125;, &#123;</span><br><span class="line">		headers: &#123;</span><br><span class="line">			AAA: <span class="built_in">encodeURIComponent</span>(<span class="string">'珠峰哈哈哈'</span>)</span><br><span class="line">		&#125;,</span><br><span class="line">		transformRequest: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">if</span> (!data) <span class="keyword">return</span> data;</span><br><span class="line">			<span class="keyword">let</span> str = <span class="string">``</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> data) &#123;</span><br><span class="line">				<span class="keyword">if</span> (!data.hasOwnProperty(key)) <span class="keyword">break</span>;</span><br><span class="line">				str += <span class="string">`&amp;<span class="subst">$&#123;key&#125;</span>=<span class="subst">$&#123;data[key]&#125;</span>`</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">return</span> str.substring(<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;).then(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> result.data;</span><br><span class="line">	&#125;).catch(<span class="function"><span class="params">reason</span> =&gt;</span> &#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(reason);</span><br><span class="line">	&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(data);</span><br><span class="line">	&#125;); *<span class="regexp">/</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="comment">/* 在使用AXIOS之前，我们一般都需要配置默认的配置项 */</span></span><br><span class="line">	<span class="comment">// 1.基础URL，后期再发送请求的时候，URL请求地址最前面的公共部分就不需要再写了</span></span><br><span class="line">	axios.defaults.baseURL = <span class="string">"http://127.0.0.1:5500"</span>;</span><br><span class="line">	<span class="comment">// 2.跨域请求中允许携带资源凭证（例如COOKIE信息）</span></span><br><span class="line">	axios.defaults.withCredentials = <span class="literal">true</span>;</span><br><span class="line">	<span class="comment">// 3.设置请求头:POST系列中，我们传递给服务器数据的格式一般以x-www-form-urlencoded格式为主</span></span><br><span class="line">	axios.defaults.headers[<span class="string">'Content-Type'</span>] = <span class="string">'application/x-www-form-urlencoded'</span>;</span><br><span class="line">	<span class="comment">// 4.设置请求拦截器（只对POST系列有用）：把基于请求主体传递给服务器的内容进行拦截，把内容格式变为x-www-form-urlencoded这种格式，再传递给服务器</span></span><br><span class="line">	axios.defaults.transformRequest = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (!data) <span class="keyword">return</span> data;</span><br><span class="line">		<span class="keyword">let</span> str = <span class="string">``</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> data) &#123;</span><br><span class="line">			<span class="keyword">if</span> (!data.hasOwnProperty(key)) <span class="keyword">break</span>;</span><br><span class="line">			str += <span class="string">`&amp;<span class="subst">$&#123;key&#125;</span>=<span class="subst">$&#123;data[key]&#125;</span>`</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> str.substring(<span class="number">1</span>);</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="comment">// 5.设置响应拦截器：[成功状态]把从服务器获取的结果中的响应主体信息获取到即可，[失败状态]手动把错误信息抛出异常</span></span><br><span class="line">	axios.interceptors.response.use(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> response.data;</span><br><span class="line">	&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(error);</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="comment">// 6.配置什么才算成功（把PROMISE状态改为FULFILLED）</span></span><br><span class="line">	axios.defaults.validateStatus = <span class="function"><span class="keyword">function</span> (<span class="params">status</span>) </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="regexp">/^(2|3)\d&#123;2&#125;$/</span>.test(status);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// axios.get('/json/data2.json').then(data =&gt; &#123;</span></span><br><span class="line">	<span class="comment">// 	console.log(data);</span></span><br><span class="line">	<span class="comment">// &#125;).catch(reason =&gt; &#123;</span></span><br><span class="line">	<span class="comment">// 	console.log(reason);</span></span><br><span class="line">	<span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//=&gt;Promise.all</span></span><br><span class="line">	<span class="keyword">let</span> promise1 = <span class="built_in">Promise</span>.resolve(<span class="number">100</span>);</span><br><span class="line">	<span class="keyword">let</span> promise2 = <span class="built_in">Promise</span>.resolve(<span class="number">200</span>);</span><br><span class="line">	axios.all([promise1, promise2]).then(<span class="function"><span class="params">results</span> =&gt;</span> &#123;</span><br><span class="line">		<span class="keyword">let</span> [val1, val2] = results;</span><br><span class="line">		<span class="built_in">console</span>.log(val1, val2);</span><br><span class="line">	&#125;);</span><br><span class="line">	<span class="comment">/* axios.all([promise1, promise2]).then(axios.spread(function (val1, val2) &#123;</span></span><br><span class="line"><span class="comment">		//=&gt;axios.spread：把基于axios.all获取的结果一项项的单独获取到</span></span><br><span class="line"><span class="comment">		console.log(val1, val2);</span></span><br><span class="line"><span class="comment">	&#125;)) */</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 
-            <hr>
-          </div>
-          <br>
-          <div>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
             
-            <p>
-              <i class="iconfont icon-tag"></i>
-              
-            </p>
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
             
-              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
-            
-          </div>
         </div>
-      </div>
-    </div>
-    <div class="d-none d-lg-block col-lg-2 toc-container">
-      
-  <div id="toc">
-    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
-    <div id="tocbot"></div>
-  </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
 
     </div>
-  </div>
+    
 </div>
 
-<!-- custom -->
 
-
-<!-- Comments -->
-<div class="col-lg-7 mx-auto nopadding-md">
-  <div class="container comments mx-auto" id="comments">
-    
-  </div>
-</div>
-
-    
-  </main>
-
-  
-    <a class="z-depth-1" id="scroll-top-button" href="#" role="button">
-      <i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i>
-    </a>
-  
-
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">keyword</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
     </div>
-  </div>
 </div>
-  
-
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><b>Hexo</b></a>
-    <i class="iconfont icon-love"></i>
-    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"> <b>Fluid</b></a>
-    <br>
-    
-  </div>
-</footer>
-
-<!-- SCRIPTS -->
-<script src="/lib/jquery/jquery.min.js"></script>
-<script src="/lib/popper/popper.min.js"></script>
-<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="/lib/mdbootstrap/js/mdb.min.js"></script>
-<script src="/js/main.js"></script>
-
-  
-    <script src="/lib/tocbot/tocbot.min.js"></script>
-  
-  <script src="/js/post.js"></script>
-
-
-  <script src="/lib/prettify/prettify.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('pre').addClass('prettyprint linenums');
-      prettyPrint();
-    })
-  </script>
-
-
-  <script src="/lib/typed/typed.min.js"></script>
-  <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "自己封装的promise版ajax&nbsp;",
-      ],
-      cursorChar: "_",
-      typeSpeed: 70,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
-  </script>
-
-
-  <script src="/lib/anchor/anchor.min.js"></script>
-  <script>
-    anchors.options = {
-      placement: "right",
-      visible: "false",
-      
-    };
-    var el = "h1,h2,h3,h4,h5,h6".split(",");
-    var res = [];
-    for (item of el) {
-      res.push(".markdown-body > " + item)
-    }
-    anchors.add(res.join(", "))
-  </script>
-
-
-
-  <script src="/js/local-search.js"></script>
-  <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      getSearchFile(path);
-      this.onclick = null
-    }
-  </script>
-
-
 </body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 </html>
