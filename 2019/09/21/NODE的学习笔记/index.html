@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>NODE的学习笔记 | faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NODE基础知识node的作用 应用node环境做的一些事情 =&amp;gt; 基于V8引擎(webkit内核)渲染和解析JS(所以它不是后台语言，他是一个工具或者环境，用来解析JS的工具或者环境= &amp;gt;而说他是后台语言，主要原因是：我们一般会把NODE安装在服务器上，在服务器端写一些JS代码，通过NODE执行这些代码，实现服务器应该干的预言)** (类似的：webview / 谷歌浏览器等)  基">
+<meta name="keywords" content="javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NODE的学习笔记">
+<meta property="og:url" content="http://yoursite.com/2019/09/21/NODE的学习笔记/index.html">
+<meta property="og:site_name" content="faker">
+<meta property="og:description" content="NODE基础知识node的作用 应用node环境做的一些事情 =&amp;gt; 基于V8引擎(webkit内核)渲染和解析JS(所以它不是后台语言，他是一个工具或者环境，用来解析JS的工具或者环境= &amp;gt;而说他是后台语言，主要原因是：我们一般会把NODE安装在服务器上，在服务器端写一些JS代码，通过NODE执行这些代码，实现服务器应该干的预言)** (类似的：webview / 谷歌浏览器等)  基">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-22T14:49:41.877Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NODE的学习笔记">
+<meta name="twitter:description" content="NODE基础知识node的作用 应用node环境做的一些事情 =&amp;gt; 基于V8引擎(webkit内核)渲染和解析JS(所以它不是后台语言，他是一个工具或者环境，用来解析JS的工具或者环境= &amp;gt;而说他是后台语言，主要原因是：我们一般会把NODE安装在服务器上，在服务器端写一些JS代码，通过NODE执行这些代码，实现服务器应该干的预言)** (类似的：webview / 谷歌浏览器等)  基">
+  
+    <link rel="alternate" href="/atom.xml" title="faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">LSG</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-NODE的学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/21/NODE的学习笔记/" class="article-date">
+  <time datetime="2019-09-21T03:17:11.858Z" itemprop="datePublished">2019-09-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      NODE的学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="NODE基础知识"><a href="#NODE基础知识" class="headerlink" title="NODE基础知识"></a>NODE基础知识</h3><h3 id="node的作用"><a href="#node的作用" class="headerlink" title="node的作用"></a>node的作用</h3><blockquote>
+<p><strong>应用node环境做的一些事情</strong></p>
+<p>=&gt; 基于V8引擎(webkit内核)渲染和解析JS(所以它不是后台语言，他是一个工具或者环境，用来解析JS的工具或者环境= &gt;而说他是后台语言，主要原因是：我们一般会把NODE安装在服务器上，在服务器端写一些JS代码，通过NODE执行这些代码，实现服务器应该干的预言)**</p>
+<p>(类似的：webview / 谷歌浏览器等)</p>
+<ol>
+<li>基于命令$ node xxx.js 把JS代码在NODE环境中执行</li>
+<li>基于REPL模式(Read-Evaluate-Print-Loop，输入-求职-输出-循环)$ node</li>
+</ol>
+<p><strong>事情1：我们后期学习的webpack(自动化项目部署)就是基于node环境运行的</strong></p>
+<p><strong>事情2：npm (node package manager) 是安装NODE后自带的模块管理工具，基于它可以安装和卸载对应的模块，类似的模块管理工具还有：borwer、yarn</strong></p>
+<ul>
+<li>npm安装模块是从npmjs.com 下载</li>
+<li>borwer安装模块是从github.com 下载</li>
+</ul>
+</blockquote>
+<h3 id="基于node-js-javascript-实现服务器端的功能操作"><a href="#基于node-js-javascript-实现服务器端的功能操作" class="headerlink" title="基于node.js (javascript)实现服务器端的功能操作"></a>基于node.js (javascript)实现服务器端的功能操作</h3><ul>
+<li>后台语言：java / python / node.js / php / go / C#(asp.net)…</li>
+</ul>
+<p><strong>项目架构1：基于node.js构建全栈项目( 一般应用于中小型项目 )</strong><br> 客户端 JS             服务器端 NODE.JS</p>
+<ol>
+<li>客户端JS向服务器发送资源文件请求=》</li>
+</ol>
+<p>###项目架构2：基于NODE.JS构建中间层<br>=&gt;特点：单线程异步、无堵塞I/O、事件驱动<br>=&gt;node.js作为服务层，抗压和抗并发的能力还是不错的，前端做的活是JS和node.js</p>
+<p> 客服端 JS             中间处理层node.js            服务器JAVA</p>
+<ol>
+<li>客户端发个中间层，然后中间层处理基础的业务逻辑，然后再转给后台</li>
+<li>后台做数据分析和挖掘再转给中间层，中间层在做基础的业务逻辑，把最后的结果返给客户端<br>这种方式，也有可能基于node.js中间层实现跨域访问：客户端和中间层在同一个域下(同源)，基于中间层从第三方服务器上获取数据(node.js可以跨域获取数据)<blockquote>
+<p>有的项目中，当客户端和服务器进行同时开发的时候，需要两端协商出(API文档)接口规范，然后由服务器端先开发出一个伪接口(或者测试接口)，但是有时候后太忙，伪接口需要前端写；基于node.js开发一套数据MOCK的后台；当项目联调的时候，再把接口切换到真实的后台上；</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="项目架构3：基于node-js实现服务器渲染"><a href="#项目架构3：基于node-js实现服务器渲染" class="headerlink" title="项目架构3：基于node.js实现服务器渲染"></a>项目架构3：基于node.js实现服务器渲染</h3><p>=&gt; 客户端数据绑定后，在页面源代码中看不到绑定的内容，不利于SEOde优化推广，所以有些产品需要放弃“客服端渲染”，改为“服务器渲染” (由node.js处理)<br>客户端：最后返回给客户端的是，有结构样式<br>中间层node.js：资源文件在中间层，它也充当了web服务器<br>后台：提供数据请求API，做数据和相关业务逻辑的处理<br>  客户端              中间层node.js            后台</p>
+<ol>
+<li>当我们在客户端输入一个网址，向服务器发送请求</li>
+<li>中间层接收到请求后，先找到资源文件例如：xxx.html等，然后向后台发送各种请求，拿到页面的每一部分需要展示的数据</li>
+<li>把数据和结构样式在服务器端进行渲染=&gt;渲染出有结构和数据的页面</li>
+<li>返回给客户端页面</li>
+</ol>
+<h3 id="I-O"><a href="#I-O" class="headerlink" title="I / O"></a>I / O</h3><ol>
+<li>I: input 输入</li>
+<li>O：output 输出</li>
+<li>I / O一般指对文件的读写操作</li>
+</ol>
+<p><strong>JS在客户端浏览器中运行，能否对客户端本地的文件进行读写操作？</strong></p>
+<blockquote>
+<ul>
+<li>答案：不能，因为要保证客户端的信息安全</li>
+<li><code>&lt;input type=&#39;file&#39;/&gt;文件上传这种除外，但是这种也需要用户手动选择后才可以</code></li>
+</ul>
+</blockquote>
+<p><strong>JS在服务器端运行(基于NODE运行)，能否对服务器端的文件进行操作？</strong></p>
+<blockquote>
+<ul>
+<li>答案：可以</li>
+<li>node赋予了JS进行 I / O 操作的能力 (内置模块：fs)</li>
+</ul>
+</blockquote>
+<h2 id="window-amp-global"><a href="#window-amp-global" class="headerlink" title="window &amp; global"></a>window &amp; global</h2><p>在客户端浏览器中运行JS，JS全局对象是：window(提供了很多内置的属性和方法) </p>
+<p><strong>在NODE中运行JS，全局对象是：global 或者 当前模块</strong></p>
+<ul>
+<li>process：node中进程管理属性  <ul>
+<li>process.nextTick( ) 下个任务</li>
+<li>process.env() 设置node全局变量</li>
+</ul>
+</li>
+<li>Buffer  数据流格式</li>
+<li>setImmediate () 立即执行(类似于setTimeout(func,0))</li>
+</ul>
+<p><strong>在REPL命令中输出的this是global，但是在xxx.js中输出的this是当前模块本身</strong></p>
+<h3 id="基于NPM-模块管理"><a href="#基于NPM-模块管理" class="headerlink" title="基于NPM 模块管理"></a>基于NPM 模块管理</h3><ol>
+<li>模块管理（安装和卸载）</li>
+</ol>
+<blockquote>
+<p>安装在全局环境下和安装在当前项目中</p>
+</blockquote>
+<ul>
+<li><p>全装在全局：$ npm install xxx –global （$ npm i -g xxx）</p>
+</li>
+<li><p>安装在本地项目中：$ npm i xxx</p>
+<ul>
+<li>把模块设置为开发依赖（开发中）：$ npm i xxx –save-dev</li>
+<li>把模块设置为生产依赖（部署到服务器）：$ npm i xxx –save</li>
+</ul>
+</li>
+<li><p>安装在全局和本地的区别</p>
+<ul>
+<li>安装在全局后对任何项目都有作用（也有可能导致版本冲突），但是只能基于命令的方式管理，不能基于CommonJS中的require导入使用（通俗说：就是不能导入到文件中基于代码来处理）<ul>
+<li>$ npm root -g 查看全局安装到的目录</li>
+<li>之所以可以使用命令操作，是因为在全局目录下生成了一个xxx.cmd的文件</li>
+</ul>
+</li>
+<li>安装在本地默认不能基于命令管理，但是可以导入到文件中基于代码操作，只对当前项目有用</li>
+</ul>
+</li>
+<li><p>在本地安装模块之前，最好先：$ npm init -y，生成package.json模块配置文件</p>
+<ul>
+<li><p>把安装的模块生成配置清单，存放在package.json中，后期别人需要部署项目的时候，只需要执行 $ npm i 就可以把所有的依赖项重新安装一遍 “跑环境”</p>
+<ul>
+<li>$ npm i 是把开发和生产依赖都安装一遍</li>
+<li>$ npm i –production 只安装生产依赖的模块</li>
+</ul>
+</li>
+<li><p>在package.json中，可以基于scripts选项配置本地可执行的脚本命令 $npm run xxx</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">	<span class="comment">//=&gt;AAA是命令，值是要做的事情</span></span><br><span class="line">	<span class="string">"AAA"</span>: <span class="string">"node xxx.js"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>在配置可执行脚本命令的时候，基于process的环境变量区分开发还是生产环境 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> <span class="string">"scripts"</span>: &#123;</span><br><span class="line"><span class="comment">//=&gt;set NODE_EVN=dev 设置全局环境变量（MAC下用 export NODE_EVN=dev）</span></span><br><span class="line">	<span class="string">"serve"</span>: <span class="string">"set NODE_EVN=dev&amp;&amp;node test1.js"</span>,</span><br><span class="line"> 			<span class="string">"build"</span>: <span class="string">"set NODE_EVN=pro&amp;&amp;node test1.js"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="commonJS模块管理机制"><a href="#commonJS模块管理机制" class="headerlink" title="commonJS模块管理机制"></a>commonJS模块管理机制</h3><blockquote>
+<ol>
+<li>AMD：require.js</li>
+<li>CMD：sea.js</li>
+<li>CommonJS：node.js</li>
+<li>ES6 Module</li>
+</ol>
+<p><strong>这些模块化思想，规定了在JS中我们的模块如何的创建，如何的导入以及如何导出</strong></p>
+</blockquote>
+<ol>
+<li><strong>内置模块</strong></li>
+</ol>
+<blockquote>
+<ol>
+<li>http/https：创建和管理服务的模块</li>
+<li>fs ：给予JS进行 I / O操作的</li>
+<li>url ：解析 URL地址的</li>
+<li>path ：管理路径</li>
+</ol>
+</blockquote>
+<ol start="2">
+<li><p><strong>第三方模块：基于npm安装，别人写好供我们使用的</strong></p>
+<ul>
+<li>less =&gt;可以不用</li>
+<li>mime</li>
+<li>qs</li>
+<li>express</li>
+<li>express-session</li>
+<li>body-parser</li>
+<li>…</li>
+</ul>
+</li>
+<li><p><strong>自定义模块：自己写的模块</strong></p>
+</li>
+</ol>
+<h3 id="node中的模块管理"><a href="#node中的模块管理" class="headerlink" title="node中的模块管理"></a>node中的模块管理</h3><ol>
+<li>在node环境下，我们每创建一个JS都相当于创建了一个新模块：而那个模块中的方法也都是模块的私有方法，不同模块之间的同名方法不会有任何的冲突</li>
+<li>module.exprots就是NODE天生自带的用来导出模块中方法的方式</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt;导出需要被外部模块所调用的方法</span></span><br><span class="line"><span class="built_in">module</span>.exprots就是NODE天生自带的用来导出模块中方法的方式</span><br><span class="line"><span class="built_in">module</span>.exprots=&#123;</span><br><span class="line">    <span class="comment">//=&gt;这些属性方法就是需要暴露给外面使用的</span></span><br><span class="line">    xxx:xxx</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>require是NODE天生提供的用来导入模块的方法</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//=&gt;语法</span></span><br><span class="line"><span class="keyword">let</span> [模块名] = <span class="built_in">require</span> ([模块的地址])</span><br><span class="line"><span class="comment">//=&gt;例如</span></span><br><span class="line"><span class="comment">//1)可以省略.js后缀名</span></span><br><span class="line"><span class="comment">//2)如果是调用自己定义的模块，则需要加/(根目录) ./(当前目录) ../(上级目录) 这三个中的某一个</span></span><br><span class="line"><span class="comment">//3)不加上述地址，则先找第三方模块(安装在自己本地的)，如果没有安装，则找NODE中的内置模块，如果再没有，则报错</span></span><br><span class="line"><span class="keyword">let</span> A = <span class="built_in">require</span>(<span class="string">'./A'</span>);</span><br><span class="line"><span class="keyword">let</span> qs =<span class="built_in">require</span>(<span class="string">'qs'</span>)</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>导入模块是同步的(没导入完成，后面的事情是不处理的)；每一次导入模块都是把导入的模块中的JS代码从上到下执行一遍(只执行一遍)</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/21/NODE的学习笔记/" data-id="ck0v9359q00092sccmqzc5ngp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/19/存储的作用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">存储的作用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/21/NODE的学习笔记/">NODE的学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/存储的作用/">存储的作用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/一个倒计时案例/">一个倒计时案例</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/权限校验从用户成功登陆开始/">权限校验</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/AJAX核心处理/">AJAX的学习</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Faker<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

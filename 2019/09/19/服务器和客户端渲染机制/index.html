@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>服务器和客户端 | faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="服务器和客户端渲染机制服务器接收到请求后  找到对应的页面，获取到页面的代码  再根据需求从数据库中获取到需要动态展示的数据  把页面和数据混合在一起进行渲染，声称有结构有内容的完整页面 = &amp;gt; 服务器渲染  把渲染玩的页面返回给客户端     服务器渲染的特点  我们看到的内容都是在服务器端渲染完的(JSP、PHP、ASP、ASP.NET、NODE…)，客户端只是把所有渲染好的内容呈现在页">
+<meta name="keywords" content="javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="服务器和客户端">
+<meta property="og:url" content="http://yoursite.com/2019/09/19/服务器和客户端渲染机制/index.html">
+<meta property="og:site_name" content="faker">
+<meta property="og:description" content="服务器和客户端渲染机制服务器接收到请求后  找到对应的页面，获取到页面的代码  再根据需求从数据库中获取到需要动态展示的数据  把页面和数据混合在一起进行渲染，声称有结构有内容的完整页面 = &amp;gt; 服务器渲染  把渲染玩的页面返回给客户端     服务器渲染的特点  我们看到的内容都是在服务器端渲染完的(JSP、PHP、ASP、ASP.NET、NODE…)，客户端只是把所有渲染好的内容呈现在页">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="c:%5CUsers%5Cpc%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568867487011.png">
+<meta property="og:updated_time" content="2019-09-19T11:49:05.430Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="服务器和客户端">
+<meta name="twitter:description" content="服务器和客户端渲染机制服务器接收到请求后  找到对应的页面，获取到页面的代码  再根据需求从数据库中获取到需要动态展示的数据  把页面和数据混合在一起进行渲染，声称有结构有内容的完整页面 = &amp;gt; 服务器渲染  把渲染玩的页面返回给客户端     服务器渲染的特点  我们看到的内容都是在服务器端渲染完的(JSP、PHP、ASP、ASP.NET、NODE…)，客户端只是把所有渲染好的内容呈现在页">
+<meta name="twitter:image" content="c:%5CUsers%5Cpc%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568867487011.png">
+  
+    <link rel="alternate" href="/atom.xml" title="faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">LSG</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-服务器和客户端渲染机制" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/19/服务器和客户端渲染机制/" class="article-date">
+  <time datetime="2019-09-19T04:31:34.037Z" itemprop="datePublished">2019-09-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      服务器和客户端
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="服务器和客户端渲染机制"><a href="#服务器和客户端渲染机制" class="headerlink" title="服务器和客户端渲染机制"></a>服务器和客户端渲染机制</h2><h4 id="服务器接收到请求后"><a href="#服务器接收到请求后" class="headerlink" title="服务器接收到请求后"></a>服务器接收到请求后</h4><blockquote>
+<ol>
+<li><p>找到对应的页面，获取到页面的代码</p>
+</li>
+<li><p>再根据需求从数据库中获取到需要动态展示的数据</p>
+</li>
+<li><p>把页面和数据混合在一起进行渲染，声称有结构有内容的完整页面</p>
+<p>= &gt; 服务器渲染</p>
+<ol start="4">
+<li>把渲染玩的页面返回给客户端</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+<h3 id="服务器渲染的特点"><a href="#服务器渲染的特点" class="headerlink" title="服务器渲染的特点"></a>服务器渲染的特点</h3><blockquote>
+<ol>
+<li>我们看到的内容都是在服务器端渲染完的(JSP、PHP、ASP、ASP.NET、NODE…)，客户端只是把所有渲染好的内容呈现在页面中而已；然而我们第一次渲染完，页面中的某部分数据需要更新了，我们需要让服务器整体重新的渲染一次，把最新的页面(包含最新的数据)返回给客户端，客户端只能整体刷新页面展示最新的内容 = &gt;”全局刷新”性能和体验等都非常差，而且服务器压力也很大…</li>
+<li>如果服务器性能比较高，页面展现出来的速度会快一些，因为只要从服务器拿到内容，一切信息都已经准备好了</li>
+<li>由于内容在服务器端已经渲染好了，所以页面渲染完成后，在页面的源代码中哪个都可以看到内容，有利于SEO搜索引擎优化</li>
+</ol>
+</blockquote>
+<h3 id="客户端渲染数据的内容"><a href="#客户端渲染数据的内容" class="headerlink" title="客户端渲染数据的内容"></a>客户端渲染数据的内容</h3><blockquote>
+<ol>
+<li>可以实现页面中内容的局部刷新，而且渲染的操作交给客户端来做=&gt;体验好、减轻了服务器压力</li>
+<li>而且开始可以只把部分区域内容的数据获取到，滚到某个区域后，在请求对应的数据也可以，实现数据的分批异步加载，提高性能体验</li>
+<li>由于客户端渲染的内容没有出现在页面的源代码中，不利于SEO优化</li>
+</ol>
+</blockquote>
+<p><img src="C:%5CUsers%5Cpc%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1568867487011.png" alt="1568867487011"></p>
+<h3 id="当代项目开发的整个架构模式"><a href="#当代项目开发的整个架构模式" class="headerlink" title="当代项目开发的整个架构模式"></a>当代项目开发的整个架构模式</h3><ol>
+<li>纯服务器渲染(需要做SEO优化或者是技术氛围问题)</li>
+<li>混编模式：部分内容为服务器渲染，部分内容是客户端渲染  =&gt;常见的<ul>
+<li>骨架屏：首屏内容为服务器渲染(目的是让页面一打开，就把首屏内容加载出来，前提服务器得给力)，其余屏内容都是客户端基于AJAX在逐一获取到的，对于表单提交等数据交互操作也是客户端基于AJAX等操作为主(局部刷新)</li>
+</ul>
+</li>
+<li>完全客户端和服务器端分离开发 =&gt; 目前最常见的(推荐的)<ul>
+<li>vue \ react \ jQ</li>
+</ul>
+</li>
+<li>把vue和react在服务器端基于node来渲染 =&gt;服务器渲染</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/19/服务器和客户端渲染机制/" data-id="ck0v9359100062scc5oufz5j8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/09/19/AJAX核心处理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AJAX的学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/19/URL地址经历了什么/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">URL都经历了什么</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/21/NODE的学习笔记/">NODE的学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/存储的作用/">存储的作用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/一个倒计时案例/">一个倒计时案例</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/权限校验从用户成功登陆开始/">权限校验</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/AJAX核心处理/">AJAX的学习</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Faker<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

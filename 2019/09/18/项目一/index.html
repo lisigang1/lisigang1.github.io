@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>做一个小项目 | faker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="项目一 项目结构目录  ​    |- admin 存储我们所有的后台程序 ​    |- client 客户端（前端）所有的程序  admin  &amp;gt; 首先跑环境：$ npm i  &amp;gt; 纠正一些基础的配置：config.js &amp;gt;   - PORT 后台程序运行的端口 &amp;gt;   - CROS.ALLOW_ORIGIN 客户端程序运行的服务地址 &amp;gt; 启动服务：$ node">
+<meta name="keywords" content="javaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="做一个小项目">
+<meta property="og:url" content="http://yoursite.com/2019/09/18/项目一/index.html">
+<meta property="og:site_name" content="faker">
+<meta property="og:description" content="项目一 项目结构目录  ​    |- admin 存储我们所有的后台程序 ​    |- client 客户端（前端）所有的程序  admin  &amp;gt; 首先跑环境：$ npm i  &amp;gt; 纠正一些基础的配置：config.js &amp;gt;   - PORT 后台程序运行的端口 &amp;gt;   - CROS.ALLOW_ORIGIN 客户端程序运行的服务地址 &amp;gt; 启动服务：$ node">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="c:%5CUsers%5Cpc%5CDesktop%5C%E8%80%81%E5%B8%88%E7%9A%84%E7%AC%94%E8%AE%B0%5C201908%5C%E7%AC%AC%E4%B8%83%E5%91%A8%5C%E4%BC%81%E4%B8%9AOA%E5%8A%9E%E5%85%AC%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%5C%E7%99%BB%E5%BD%95%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%A8%A1%E5%9E%8B.png">
+<meta property="og:updated_time" content="2019-09-19T11:02:14.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="做一个小项目">
+<meta name="twitter:description" content="项目一 项目结构目录  ​    |- admin 存储我们所有的后台程序 ​    |- client 客户端（前端）所有的程序  admin  &amp;gt; 首先跑环境：$ npm i  &amp;gt; 纠正一些基础的配置：config.js &amp;gt;   - PORT 后台程序运行的端口 &amp;gt;   - CROS.ALLOW_ORIGIN 客户端程序运行的服务地址 &amp;gt; 启动服务：$ node">
+<meta name="twitter:image" content="c:%5CUsers%5Cpc%5CDesktop%5C%E8%80%81%E5%B8%88%E7%9A%84%E7%AC%94%E8%AE%B0%5C201908%5C%E7%AC%AC%E4%B8%83%E5%91%A8%5C%E4%BC%81%E4%B8%9AOA%E5%8A%9E%E5%85%AC%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%5C%E7%99%BB%E5%BD%95%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%A8%A1%E5%9E%8B.png">
+  
+    <link rel="alternate" href="/atom.xml" title="faker" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">faker</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">LSG</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-项目一" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/18/项目一/" class="article-date">
+  <time datetime="2019-09-17T17:28:59.843Z" itemprop="datePublished">2019-09-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      做一个小项目
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="项目一"><a href="#项目一" class="headerlink" title="项目一"></a>项目一</h3><ol>
+<li>项目结构目录</li>
+</ol>
+<p>​    |- admin 存储我们所有的后台程序</p>
+<p>​    |- client 客户端（前端）所有的程序</p>
+<ol start="2">
+<li>admin</li>
+</ol>
+<p>&gt; 首先跑环境：$ npm i </p>
+<p>&gt; 纠正一些基础的配置：config.js</p>
+<p>&gt;   - PORT 后台程序运行的端口</p>
+<p>&gt;   - CROS.ALLOW_ORIGIN 客户端程序运行的服务地址</p>
+<p>&gt; 启动服务：$ node server.js</p>
+<p>&gt; 启动后的运行窗口不能关闭，关闭则后台服务器结束</p>
+<blockquote>
+<p>客户端采用的技术栈：</p>
+</blockquote>
+<p>- HTML5/CSS3（会用到字体图标）</p>
+<p>- JQUERY</p>
+<p>- AXIOS</p>
+<p>- 辅助插件：JQUERY.COOKIE / MD5 / 自己写的一些方法</p>
+<p>- 基于IFRAME构建最初版本的SPA单页面应用开发</p>
+<p>服务端采用的技术栈：</p>
+<p>- NODE</p>
+<p>- EXPRESS / EXPRESS-ROUTER</p>
+<p>- 本应基于数据库存储，为了方便简单，当前项目临时采用JSON文件存储数据</p>
+<p>- SESSION</p>
+<p>-—————-</p>
+<h3 id="本地存储-VS-服务器存储"><a href="#本地存储-VS-服务器存储" class="headerlink" title="本地存储 VS 服务器存储"></a>本地存储 VS 服务器存储</h3><ol start="2">
+<li>本地存储：把信息存储在客户端本地</li>
+</ol>
+<p>&gt; 谷歌控制台Application中都可以查看到</p>
+<p>- cookie</p>
+<p>- H5中WebStorage：localStorage / sessionStorage</p>
+<p>- 本地数据库存储：IndexDB</p>
+<p>- 本地缓存存储：manifest</p>
+<p>- …</p>
+<ol start="2">
+<li>服务器存储：把数据存储在服务器端</li>
+</ol>
+<p>- 数据库存储：SQLSERVER / MYSQL / ORACLE / MONGODB …</p>
+<p>- REDIS</p>
+<p>- SESSION</p>
+<p>- …</p>
+<p><img src="C:%5CUsers%5Cpc%5CDesktop%5C%E8%80%81%E5%B8%88%E7%9A%84%E7%AC%94%E8%AE%B0%5C201908%5C%E7%AC%AC%E4%B8%83%E5%91%A8%5C%E4%BC%81%E4%B8%9AOA%E5%8A%9E%E5%85%AC%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%5C%E7%99%BB%E5%BD%95%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%A8%A1%E5%9E%8B.png" alt></p>
+<h2 id="什么时候会用到本地存储？本地存储的作用？"><a href="#什么时候会用到本地存储？本地存储的作用？" class="headerlink" title="什么时候会用到本地存储？本地存储的作用？"></a>什么时候会用到本地存储？本地存储的作用？</h2><ol>
+<li><p>记住用户名和密码（或者自动登录）</p>
+</li>
+<li><p>未登录状态下，加入购物车的信息一般也先存储在本地，当登录后，把信息存储到服务器上（目的是多平台数据共享）</p>
+</li>
+<li><p>对于非实时刷新数据，我们可以在从服务器把数据获取到后，临时存储在本地（设置有效时间），在有效时间内页面刷新，不再重新从服务器获取数据，而是读取本地数据；超过有效时间重新从服务器拉取…  “前端性能优化的一点”</p>
+</li>
+<li><p>还能实现同一个网站不同页面之间的信息共享和通信</p>
+</li>
+</ol>
+<p>​         *   ……</p>
+<h2 id="本地存储到底存储在哪了？"><a href="#本地存储到底存储在哪了？" class="headerlink" title="本地存储到底存储在哪了？"></a>本地存储到底存储在哪了？</h2><ol>
+<li><p>本地存储是受浏览器限制的，例如：在谷歌中存储的数据，在IE中获取不到</p>
+</li>
+<li><p>受源(域)的限制，例如：都是用谷歌浏览器，我在京东下存储的数据，在百度中是获取不到的</p>
+</li>
+</ol>
+<p>​         * 本地存储的信息在控制台中可以查看到（而且是明文存储），所以敏感的数据尽可能不要存储在本地，非要存储也要做安全处理（例如：加密）</p>
+<pre><code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"> \* setItem([key],[value]) 存储信息</span><br><span class="line"></span><br><span class="line"> \* getItem([key]) 获取信息</span><br><span class="line"></span><br><span class="line">\* removeItem([key]) 移除某一项信息</span><br><span class="line"></span><br><span class="line">\* clear() 清除所有存储的信息</span><br><span class="line"></span><br><span class="line">\* =&gt;向本地存储的信息都是STRING字符串格式</span><br><span class="line"></span><br><span class="line">\* =&gt;localStorage是持久化存储在客户端本地的（除非手动清除或者浏览器卸载等，否则一直存储下来，没有过期时间）</span><br><span class="line"></span><br><span class="line">\* =&gt;sessionStorage会话存储（当前页面刷新，存储信息还在，但是只要页面一关闭，所有会话存储的信息都会消失）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">\* 设置cookie  =&gt;jquery.cookie.js</span><br><span class="line"></span><br><span class="line">   <span class="built_in">document</span>.cookie=<span class="string">"[key]=[value];..."</span> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$.cookie(<span class="string">'username'</span>, <span class="string">'珠峰培训'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log($.cookie(<span class="string">'username'</span>));</span><br><span class="line"></span><br><span class="line">$.removeCookie(<span class="string">'username'</span>);</span><br><span class="line"></span><br><span class="line">$.cookie(<span class="string">'username'</span>, <span class="string">'zhufeng'</span>, &#123;</span><br><span class="line">  expires: <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>().getTime() + <span class="number">30</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span> * <span class="number">1000</span>)&#125;);</span><br></pre></td></tr></table></figure></code></pre><h2 id="COOKIE-VS-LOCALSTORAGE"><a href="#COOKIE-VS-LOCALSTORAGE" class="headerlink" title="COOKIE VS LOCALSTORAGE"></a>COOKIE VS LOCALSTORAGE</h2><ol>
+<li><p>大小限制：一般浏览器允许一个源下COOKIE最多存储8KB，而LOCALSTORAGE被允许存储最大的长度限制是5MB</p>
+</li>
+<li><p>兼容性：COOKIE兼容所有浏览器，而LOCALSTORAGE是H5中新增的，不兼容IE低版本浏览器（IE6~8）</p>
+</li>
+<li><p>稳定性：COOKIE有过期时间，但是一般不等到时间可能就没了（例如：清除浏览器的缓存或者历史信息、安全卫士在清理电脑垃圾等操作时，都有可能会把存储的COOKIE给清除掉），但是这些操作对LOCALSTORAGE没有影响</p>
+</li>
+<li><p>有时候浏览器会开启无痕浏览或者隐私模式，此时无法设置COOKIE，但是可以设置LOCALSTORAGE的信息</p>
+</li>
+<li><p>和服务器端的猫腻：COOKIE总是会和服务器中的SESSION眉来眼去（客户端和服务器端交互的时候，COOKIE信息会传来传去），而LOCALSTORAGE不屑于和他们同流合污（LOCALSTORAGE和服务器没有必然的联系，是单纯的本地存储）</p>
+</li>
+<li><p>存储时间：COOKIE有过期时间，而LOCALSTORAGE是持久存储</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/18/项目一/" data-id="ck0v9359n00082scc89zzsfa0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/09/18/点击登录按钮经历了什么/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          点击登录按钮中间经历了什么
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/17/自己封装的Promise版(ajax)/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">自己封装的promise版ajax</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/21/NODE的学习笔记/">NODE的学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/存储的作用/">存储的作用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/一个倒计时案例/">一个倒计时案例</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/权限校验从用户成功登陆开始/">权限校验</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/19/AJAX核心处理/">AJAX的学习</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Faker<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
